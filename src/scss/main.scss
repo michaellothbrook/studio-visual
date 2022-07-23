@@ -11,6 +11,7 @@
 @import "../../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+@import "variables.custom";
 
 // Options
 $enable-caret: true;

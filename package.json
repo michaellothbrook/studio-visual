@@ -10,7 +10,8 @@
     "url": "git://github.com/them-es/themes-starter.git"
   },
   "scripts": {
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "build": "gulp build"
   },
   "browserslist": [
     "last 2 versions"

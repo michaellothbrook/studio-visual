@@ -1,5 +1,6 @@
 // Webpack Imports
 import * as bootstrap from "bootstrap";
+import CepService from "./services/CepService";
 
 (function () {
   "use strict";
@@ -24,4 +25,46 @@ import * as bootstrap from "bootstrap";
       trigger: "focus",
     });
   });
+
+  const cepService = new CepService();
+  const cep = document.querySelector("#cep");
+  const spinner = document.querySelector(".spinner-border");
+
+  cep.addEventListener("blur", function (e) {
+    e.preventDefault();
+    document.querySelector("#cep-btn").click();
+  });
+
+  document.querySelector("#cep-btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    const cepValue = cep.value.replace(/\D/g, "");
+    if (cepValue !== "") {
+      const cepValidation = /^[0-9]{8}$/;
+
+      if (cepValidation.test(cepValue)) {
+        spinner.classList.remove("d-none");
+        cepService.getCep(cepValue).then((data) => {
+          if (data === undefined || data.erro || data.status === 400) {
+            alert("CEP não encontrado");
+            resetForm();
+            spinner.classList.add("d-none");
+          }
+          const { logradouro, bairro, localidade, uf } = data;
+          document.querySelector("#rua").value = logradouro;
+          document.querySelector("#bairro").value = bairro;
+          document.querySelector("#cidade").value = localidade;
+          document.querySelector("#uf").value = uf;
+          spinner.classList.add("d-none");
+        });
+      } else {
+        alert("CEP inválido");
+        resetForm();
+      }
+    }
+  });
+
+  function resetForm() {
+    const form = document.querySelector("#cep-form");
+    form.reset();
+  }
 })();

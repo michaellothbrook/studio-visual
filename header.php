@@ -5,6 +5,8 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<!-- Font Awesome -->
+	<script src="https://kit.fontawesome.com/7d95682cb8.js" crossorigin="anonymous"></script>
 	<?php wp_head(); ?>
 </head>
 
@@ -13,6 +15,26 @@ $navbar_scheme   = get_theme_mod('navbar_scheme', 'navbar-light bg-light'); // G
 $navbar_position = get_theme_mod('navbar_position', 'static'); // Get custom meta-value.
 
 $search_enabled  = get_theme_mod('search_enabled', '1'); // Get custom meta-value.
+
+$top_header_color = carbon_get_theme_option('top_bar_color'); // Get custom meta-value.
+$top_header_title = carbon_get_theme_option('header_title'); // Get custom meta-value.
+
+$icons_color = carbon_get_theme_option('social_icons_color'); // Get custom meta-value.
+
+$icons = array(
+	'facebook' => array(
+		'url' => carbon_get_theme_option('crb_network_facebook'),
+		'icon' => 'fab fa-facebook-f',
+	),
+	'instagram' => array(
+		'url' => carbon_get_theme_option('crb_network_instagram'),
+		'icon' => 'fab fa-instagram',
+	),
+	'linkedin' => array(
+		'url' => carbon_get_theme_option('crb_network_linkedin'),
+		'icon' => 'fab fa-linkedin-in',
+	),
+);
 ?>
 
 <body <?php body_class(); ?>>
@@ -22,6 +44,34 @@ $search_enabled  = get_theme_mod('search_enabled', '1'); // Get custom meta-valu
 	<a href="#main" class="visually-hidden-focusable"><?php esc_html_e('Skip to main content', 'studio-visual-teste'); ?></a>
 
 	<header>
+		<div class="top-menu bg-<?= $top_header_color; ?> p-3">
+			<div class="container">
+				<div class="row align-items-center justify-content-md-between text-center text-md-start">
+					<div class="col-md-8">
+						<div class="top-menu-left">
+							<span><?= $top_header_title; ?></span>
+						</div>
+					</div>
+					<div class="col-md-auto">
+						<div class="top-menu-right">
+							<ul class="list-inline m-0">
+								<?php
+								foreach ($icons as $network_social => $url) {
+									if ($url['url']) : ?>
+										<li class="list-inline-item">
+											<a class="text-<?= $icons_color; ?>" href="<?= $url['url']; ?>" target="_blank" rel="noopener noreferrer">
+												<i class="<?= $url['icon']; ?>"></i>
+											</a>
+										</li>
+								<?php endif;
+								} ?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<nav id="header" class="navbar navbar-expand-md <?php echo esc_attr($navbar_scheme);
 																										if (isset($navbar_position) && 'fixed_top' === $navbar_position) : echo ' fixed-top';
 																										elseif (isset($navbar_position) && 'fixed_bottom' === $navbar_position) : echo ' fixed-bottom';

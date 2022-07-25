@@ -1,43 +1,87 @@
-## them.es Starter Theme
+# Studio Visual - Teste
 
-**them.es Starter** is a WordPress Starter Theme built with Bootstrap. Please note that the Source files are only recommended for WordPress Developers who are searching for a simple, solid, proved and tested **Bootstrap Starter Theme** to build upon. **_Don't_ expect a ready-to-use WordPress Theme!**
+- 🚀 [Introdução](#markdown-header-introducao)
+- 🔨 [Desenvolvimento](#markdown-header-desenvolvimento)
+  - ⚙️ [Como Iniciar](#markdown-header-como-iniciar)
+  - ⚙️ [Blocos Gutemberg - Funcionalidades](#markdown-header-blocos-gutemberg-funcionalidades)
+  - ⚙️ [Durante o Desenvolvimento](#markdown-header-durante-o-desenvolvimento)
+- 🛠️ [Tecnologias e Ferramentas](#markdown-header-tecnologias-e-ferramentas)
+- 🌟 [Squad](#markdown-header-squad)
+- 📝 [Revisão](#markdown-header-revisao)
 
-If you want to see it in action or want to download a customized Theme for free, check out [https://them.es/starter-bootstrap](https://them.es/starter-bootstrap)
+## 🚀 Introdução
 
+[[Ir para o índice ☝️]](#markdown-header-studio-visual-teste)
 
-## What's included?
-* WordPress Theme
-* Bootstrap Framework
-* Sass Source files
-* gulp + webpack configuration
-* NPM configuration to keep the required build libraries updated and to add new libraries
-* Customization API
-* 2 Menus
-* Demo Content
+## 🔨 Desenvolvimento
 
+### ⚙️ Como Iniciar
 
-## Task Automation
-This Theme comes with a built in gulp/webpack task automation. Sass files will be compiled if changed, vendor prefixes will be added automatically and the CSS will be minified. JS source files will be bundled and minified.
+O que você precisa:
 
-* Prerequisites: [Node.js](https://nodejs.org) (NPM) needs to be installed on your system
-* Open the **Project directory** `/` in Terminal and install the required Node.js dependencies: gulp, webpack, Sass-Compiler, Autoprefixer, etc.
-* `$ npm install`
-* Run the **`watch`** script
-* `$ npm run watch`
-* Modify `/assets/main.scss` and `/assets/main.js`
+- Node, Composer e Git instalados
+- Usuário e senha do WP ou uma nova instalação do WP
+- Zip do WP e os [plugins essenciais](#markdown-header-plugins-essenciais)
+- Cópia do banco de dados e das pastas de uploads e de plugins, se necessário
 
+1. Faça o clone do repositório depois jogue na pasta de temas do WP.
+2. Baixe e instale o WP.
+3. Depois, você precisa instalar as dependências e compilar os arquivos de CSS e JS do tema:
+   - Vá para a pasta do tema: `cd wp-content/themes/studio-visual-teste`
+   - Instale as dependências do Composer: `composer install`
+   - Instale as dependências do Node: `npm install`
+   - Compile os CSS e JS do tema: `npm run build`
+4. Acesse o site com sua url.
+5. Ative o tema clonado.
 
-## Technology
+[[Ir para o índice ☝️]](#markdown-header-studio-visual-teste)
 
-* [Bootstrap](https://github.com/twbs/bootstrap), [MIT license](https://github.com/twbs/bootstrap/blob/master/LICENSE)
-* [Sass](https://github.com/sass/sass), [MIT license](https://github.com/sass/sass/blob/stable/MIT-LICENSE)
-* [gulp](https://github.com/gulpjs/gulp), [MIT license](https://github.com/gulpjs/gulp/blob/master/LICENSE)
-* [webpack](https://github.com/webpack/webpack), [MIT license](https://github.com/webpack/webpack/blob/master/LICENSE)
-* [wp-bootstrap-navwalker](https://github.com/twittem/wp-bootstrap-navwalker), [GPLv2+](https://github.com/twittem/wp-bootstrap-navwalker/blob/master/LICENSE.txt)
+### ⚙️ Blocos Gutemberg - Funcionalidades
 
+Os seguintes procedimentos são necessários para testar as funcionalidades do tema
 
-## Copyright & License
+1. Insira o bloco Gutemberg chamado "Formulário de endereço" em qualquer página para ver o teste em ação.
+1. Salve a página e veja o resultado.
 
-Code and Documentation &copy; [them.es](https://them.es)
+[[Ir para o índice ☝️]](#markdown-header-studio-visual-teste)
 
-Code released under [GPLv2+](https://www.gnu.org/licenses/gpl-2.0.html)
+### ⚙️ Durante o Desenvolvimento
+
+- Para o automatizador acompanhar as mudanças dos CSS e JS (na pasta `/assets`): `npm run watch`
+
+[[Ir para o índice ☝️]](#markdown-header-studio-visual-teste)
+
+## 🛠️ Tecnologias e Ferramentas
+
+Este projeto está sendo desenvolvido com as seguintes tecnologias e ferramentas:
+
+- [Tema base](https://them.es/starter-bootstrap/)
+  - [Wordpress 6.0](https://br.wordpress.org/)
+  - [Webpack](https://webpack.js.org/)
+  - [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+  - [Sass](https://sass-lang.com/)
+- [Node.js](https://nodejs.org)
+- [Composer](https://getcomposer.org/download/)
+- [Git](https://git-scm.com/), com Git Flow
+
+[[Ir para o índice ☝️]](#markdown-header-studio-visual-teste)
+
+## 🌟 Squad
+
+Este projeto está sendo feito e mantido por:
+
+- Devs:
+  - Michael Braga - michaelbraga.dev@gmail.com
+- Designer: -
+- ## PO:
+  -
+- SM: -
+- Tech leader: -
+
+[[Ir para o índice ☝️]](#markdown-header-studio-visual-teste)
+
+## 📝 Revisão
+
+- 2022-07-24, por Michael Braga.
+
+[[Ir para o índice ☝️]](#markdown-header-studio-visual-teste)
